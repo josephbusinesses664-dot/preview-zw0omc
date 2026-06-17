@@ -22,9 +22,9 @@ a{text-decoration:none;color:inherit}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
-  padding:16px 0;transition:.35s}
+  padding:16px 0;background:rgba(20,20,40,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.35s}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;width:min(1140px,92%)}
-.nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(20,25,40,.08);padding:10px 0}
+.nav.scrolled{background:rgba(255,255,255,.9);box-shadow:0 6px 24px rgba(20,25,40,.08);padding:10px 0}
 .brand{font-size:1.3rem;font-weight:800;color:var(--p);display:flex;align-items:center;gap:.5rem}
 .brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--ac));box-shadow:0 0 0 4px color-mix(in srgb,var(--p) 18%,transparent)}
 .nav.scrolled .brand{color:var(--p)}
@@ -168,6 +168,18 @@ footer .fnav a{opacity:.8;font-size:.92rem;transition:.2s}footer .fnav a:hover{o
   .hero{min-height:auto}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.reveal-left,.reveal-right,.scroll-ind{opacity:1!important;transform:none!important}}
+
+/* REVIEWS MARQUEE */
+.reviews-sec{overflow:visible}
+.marquee-wrap{overflow:hidden;padding:0 0 80px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.rv-card{flex:0 0 290px;background:#fff;border:1px solid #eceef4;border-radius:18px;padding:24px 22px;box-shadow:0 6px 20px rgba(20,25,40,.07)}
+.rv-stars{color:var(--s);font-size:1.05rem;letter-spacing:.04em;margin-bottom:.7rem}
+.rv-text{color:var(--muted);font-size:.94rem;line-height:1.6;margin-bottom:.9rem;font-style:italic}
+.rv-author{font-weight:700;font-size:.9rem;color:var(--ink)}
+.rv-src{font-size:.79rem;color:var(--muted);margin-top:.15rem}
 </style>
 </head>
 <body>
@@ -235,6 +247,30 @@ footer .fnav a{opacity:.8;font-size:.92rem;transition:.2s}footer .fnav a:hover{o
           </article>
   </div>
 </div></section>
+
+
+<section class="reviews-sec pad" id="reviews"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="tag">Happy Customers</span>
+    <h2>What People Are Saying</h2>
+    <p>Real reviews from real customers in the community.</p>
+  </div>
+</div>
+<div class="marquee-wrap"><div class="marquee-track">
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Poochie's always makes my labradoodle look and smell amazing. Never going anywhere else!&rdquo;</p><div class="rv-author">Ashley R.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;So gentle and patient with my nervous little chihuahua. Highly recommend!&rdquo;</p><div class="rv-author">Victor M.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;My husky came back perfectly groomed and happy. That's hard to find!&rdquo;</p><div class="rv-author">Cathy N.</div><div class="rv-src">Yelp</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Great prices and the groomers really care about the animals. My pup loves it.&rdquo;</p><div class="rv-author">Jason T.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Fast, friendly, and my dog looked gorgeous. Best groomer I've tried in Visalia.&rdquo;</p><div class="rv-author">Tanya W.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;They did an incredible job on my doodle's first haircut. He looked adorable!&rdquo;</p><div class="rv-author">Brandon K.</div><div class="rv-src">Yelp</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Poochie's always makes my labradoodle look and smell amazing. Never going anywhere else!&rdquo;</p><div class="rv-author">Ashley R.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;So gentle and patient with my nervous little chihuahua. Highly recommend!&rdquo;</p><div class="rv-author">Victor M.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;My husky came back perfectly groomed and happy. That's hard to find!&rdquo;</p><div class="rv-author">Cathy N.</div><div class="rv-src">Yelp</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Great prices and the groomers really care about the animals. My pup loves it.&rdquo;</p><div class="rv-author">Jason T.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;Fast, friendly, and my dog looked gorgeous. Best groomer I've tried in Visalia.&rdquo;</p><div class="rv-author">Tanya W.</div><div class="rv-src">Google</div></div>
+      <div class="rv-card"><div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rv-text">&ldquo;They did an incredible job on my doodle's first haircut. He looked adorable!&rdquo;</p><div class="rv-author">Brandon K.</div><div class="rv-src">Yelp</div></div>
+</div></div>
+</section>
 
 <section class="pad about" id="about"><div class="wrap about-grid">
   <div class="about-copy reveal-left">
